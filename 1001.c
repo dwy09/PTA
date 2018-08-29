@@ -13,36 +13,25 @@
 
 
 #include<stdio.h>
-#include<string.h>
-#include <stdlib.h>
-void print_sum(int n){
-	char *name[] ={"ling","yi","er","san","si","wu","liu","qi","ba","jiu","shi"};
-    int a[10];
-    int i=0;
-    for(i=0;n>=10;i++){
-    	a[i]=n%10;
-    	n=n/10;
-	}
-	 a[i++]=n;
-
- while(i--){
-    if(i!=0){
-      printf("%s ",name[a[i]]);
-    }else{
-    printf("%s\n",name[a[i]]);
+int main()
+{
+  int num,count;
+  count = 0;
+  scanf("%d",&num);
+  while(num != 1)
+  {
+    if(num%2 == 0)
+    {
+      num /= 2;
+      count++;
+    }
+    else
+    {
+      num = (3*num)+1;
+      num /= 2;
+      count++;
     }
   }
-
-
-}
-int main(){
-	char s[100];
-	char *n=s;
-	scanf("%s",s);
-	int sum=0;
-	while(*n!='\0'){
-		sum=sum+(*n-'0');
-		n++;
-	}
-	print_sum(sum);
+  printf("%d",count);
+  return 0;
 }
